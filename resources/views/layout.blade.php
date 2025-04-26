@@ -13,9 +13,18 @@
             <a href="/" class="text-2xl font-bold text-indigo-400 hover:text-indigo-300 transition">Alok Podcast Show</a>
             <a href="/video-cv" class="hover:text-indigo-400 transition">Video CV</a>
             <a href="/payment-form" class="hover:text-indigo-400 transition">Payment Form</a>
-            <a href="/skills" class="hover:text-indigo-400 transition">Skills</a>
+
             <a href="/contact" class="hover:text-indigo-400 transition">Contact</a>
+            @auth
+    <a href="{{ route('my-payments') }}" class="text-blue-600 hover:underline">My Payments</a>
+@endauth
         </div>
+        @auth
+    @if(auth()->user()->email === 'youradminemail@example.com')
+        <a href="{{ route('admin.payments') }}" class="text-red-400 hover:underline ml-4">Admin Payments</a>
+    @endif
+@endauth
+
 
         <!-- Right Nav -->
         <div class="flex items-center space-x-2">
@@ -24,6 +33,7 @@
                 <input type="text" name="query" placeholder="Search" class="rounded-l px-3 py-1 text-black focus:outline-none" required>
                 <button type="submit" class="bg-indigo-500 hover:bg-indigo-600 text-white px-3 py-1 rounded-r transition">Search</button>
             </form>
+        
 
             <!-- Auth Buttons -->
             @auth

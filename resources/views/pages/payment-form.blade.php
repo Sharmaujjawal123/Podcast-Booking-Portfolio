@@ -9,6 +9,14 @@
             <div class="bg-green-100 text-green-700 p-3 rounded mb-4">{{ session('success') }}</div>
         @endif
 
+        @if(session('success'))
+    <div class="bg-green-100 text-green-700 p-3 rounded mb-4">
+        {{ session('success') }} 
+        <a href="{{ route('my-payments') }}" class="text-blue-600 underline ml-2">View Payment Status</a>
+    </div>
+@endif
+
+
         <form action="{{ route('payment.submit') }}" method="POST" enctype="multipart/form-data">
             @csrf
 

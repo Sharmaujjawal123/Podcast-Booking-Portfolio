@@ -16,10 +16,17 @@ class AuthController extends Controller
 
     public function doLogin(Request $request) {
         $credentials = $request->only('email', 'password');
-
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('/');
-        }
+
+// 2) Authentication passed: now Auth::user() is not null
+if (Auth::user()->email === 'ujjwalsharma7734@gmail.com') {
+    // Admin user
+    return redirect()->route('admin.payments');
+}
+
+// Regular user
+return redirect()->intended('/')->with('success', 'Logged in successfully!');
+}
 
         return back()->withErrors(['email' => 'Invalid credentials']);
     }
@@ -44,6 +51,10 @@ class AuthController extends Controller
 
         Auth::login($user);
         Mail::to($user->email)->send(new WelcomeMail($user));
+        if ($user->email === 'ujjwal@gmail.com') {
+        // Redirect admin to the admin panel
+        return redirect()->route('admin.payments');
+    }
         return redirect('/')->with('success', 'Registered successfully!');
     }
 }

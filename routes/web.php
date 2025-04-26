@@ -10,7 +10,7 @@ Route::get('/video-cv', [PageController::class, 'videoCv']);
 Route::get('/skills', [PageController::class, 'skills']);
 Route::get('/contact', [PageController::class, 'contact']);
 
-
+use App\Http\Controllers\PaymentController;
 Route::get('/payment-form', [\App\Http\Controllers\PaymentController::class, 'show'])->name('payment.form');
 Route::post('/payment-submit', [\App\Http\Controllers\PaymentController::class, 'submit'])->name('payment.submit');
 
@@ -29,3 +29,18 @@ Route::post('/logout', function () {
     return redirect('/')->with('success', 'Logged out successfully!');
 })->name('logout');
 Route::get('/search', [App\Http\Controllers\SearchController::class, 'index'])->name('search');
+
+Route::get('/my-payments', [PaymentController::class, 'userPayments'])->middleware('auth')->name('my-payments');
+
+
+
+//Admin features
+use App\Http\Controllers\AdminController;
+
+Route::get('/admin/payments', [AdminController::class, 'index'])->name('admin.payments');
+Route::post('/admin/payments/{id}/verify', [AdminController::class, 'verify'])
+->name('admin.payments.verify');
+//Route::middleware(['auth', 'admin'])->group(function () {
+  //  Route::get('/admin/payments', [AdminController::class, 'index'])->name('admin.payments');
+//});
+
