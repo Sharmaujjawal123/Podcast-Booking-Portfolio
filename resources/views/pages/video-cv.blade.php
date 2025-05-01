@@ -3,7 +3,7 @@
 @section('content')
 <div class="max-w-4xl mx-auto py-10 text-center">
 
-    <h2 class="text-3xl font-bold mb-6">Watch Alok Podcast Videos</h2>
+    <h2 class="text-3xl font-bold mb-6">Watch A.K Podcast Videos</h2>
 
     <!-- Embed a YouTube video -->
     <div class="mb-8">

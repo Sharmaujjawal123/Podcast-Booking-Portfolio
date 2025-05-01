@@ -5,7 +5,7 @@
 
     <div class="text-center mb-12">
         <h1 class="text-4xl font-extrabold text-gray-800">
-            🎙️ Welcome to <span class="text-indigo-600">Alok Podcast Show</span>
+            🎙️ Welcome to <span class="text-indigo-600">A.K Podcast Show</span>
         </h1>
         <p class="mt-3 text-lg text-gray-600">
             Dive into stories, insights, and inspiration from amazing guests!
@@ -88,7 +88,7 @@
             <a href="#" class="hover:text-indigo-600">FAQs</a>
             <a href="#" class="hover:text-indigo-600">About</a>
         </div>
-        <div>© 2024 Alok, India</div>
+        <div>© 2025 A.K, India</div>
     </footer>
 </div>
 @endsection

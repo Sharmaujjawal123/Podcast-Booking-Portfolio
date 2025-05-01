@@ -10,7 +10,7 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
         <!-- Left Nav -->
         <div class="flex items-center space-x-6">
-            <a href="/" class="text-2xl font-bold text-indigo-400 hover:text-indigo-300 transition">Alok Podcast Show</a>
+            <a href="/" class="text-2xl font-bold text-indigo-400 hover:text-indigo-300 transition">A.K Podcast Show</a>
             <a href="/video-cv" class="hover:text-indigo-400 transition">Video CV</a>
             <a href="/payment-form" class="hover:text-indigo-400 transition">Payment Form</a>
 
